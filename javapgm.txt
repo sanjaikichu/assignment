@@ -1,0 +1,100 @@
+import java.io.*;
+import java.util.*;
+class student 
+{ 
+        int i;
+        int n=3;
+        String[] string=new String[100];
+        int a[]=new int[100];
+        int b[]=new int[100];
+        long c[]=new long[1000];
+        int d[]=new int[100];
+  void   Read()
+{
+        for(i=0;i<n;i++)
+        {
+          Scanner object=new Scanner(System.in);
+            System.out.println("enter the name"); 
+            string[i]=object.next();
+            System.out.println("enter the roll no");
+            a[i]=object.nextInt();
+            System.out.println("enter the age");
+            b[i]=object.nextInt();
+            System.out.println("enter the phone no");
+            c[i]=object.nextLong();
+            System.out.println("enter the cgpa");
+            d[i]=object.nextInt();
+
+
+        }
+        System.out.println("name"+"\trollno"+"\tage"+"\tphone"+"\t    cgpa");
+        for(i=0;i<n;i++)
+        { 
+            System.out.println(string[i]+"\t"+a[i]+"\t"+b[i]+"\t"+c[i]+"\t"+d[i]);
+        }
+}
+void Large()
+{
+        int large;
+        large=d[0];
+        for(i=0;i<n;i++)
+        { 
+            if(large<d[i])
+            { 
+                large=d[i];
+
+            }
+            
+        }
+        for(i=0;i<n;i++)
+        { 
+            if(large==d[i])
+            { 
+                System.out.println(string[i]);
+            }
+        } 
+}
+   void  Small()
+{
+        int small;
+        small=b[0];
+        for(i=0;i<n;i++)
+        { 
+            if(small>b[i])
+            { 
+                small=b[i];
+            }
+        }
+        for(i=0;i<n;i++)
+        { 
+            if(small==b[i])
+            { 
+                System.out.println(a[i]);
+            }
+        } 
+}
+ void Compare()
+{
+        int m=0;       
+        for(i=0;i<n;i++)
+        { 
+            if(string[i].compareTo("ANU")==0)
+            { 
+               m=i;
+            }
+        }
+        System.out.println(c[m]);
+}
+}
+class assignment
+{
+public static void main (String args[])
+{
+student obj=new student();
+obj.Read();
+obj.Large();
+obj.Small();
+obj.Compare();
+}
+}
+
